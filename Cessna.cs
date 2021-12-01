@@ -1,28 +1,28 @@
 using System;
+using System.Collections.Generic;
 
 namespace Garage
 {
-    public class Cessna  // Propellor light aircraft
+    public class Cessna : Vehicle
     {
         public double FuelCapacity { get; set; }
-        public string MainColor { get; set; }
-        public int MaximumOccupancy { get; set; }
 
         public void RefuelTank()
         {
             // method definition omitted
         }
-         public void Drive()
+
+        public override void Drive()
         {
-            Console.WriteLine("The blue Cessna goes ......");
+            Console.WriteLine($"The {MainColor} Cessna flashes overhead! Zoooooom!");
         }
-             public void Turn()
+        public override void Turn(string direction)
         {
-            Console.WriteLine("The black Zero Turns slowly");
+            Console.WriteLine($"The vehicle banks to the {direction}.");
         }
-         public void Stop()
+        public override void Stop()
         {
-            Console.WriteLine("The black Zero screeches to a stop");
+            Console.WriteLine("The vehicle makes it halfway to the end of the runway before coming to a full stop.");
         }
     }
 }

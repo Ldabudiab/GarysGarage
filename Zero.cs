@@ -1,28 +1,30 @@
 using System;
+using System.Collections.Generic;
 
 namespace Garage
 {
-    public class Zero  // Electric motorcycle
+    public class Zero : Vehicle, IElectricVehicle //Electric Motorcycle
     {
-        public double BatteryKWh { get; set; }
-        public string MainColor { get; set; }
-        public int MaximumOccupancy { get; set; }
+        public double CurrentChargePercentage { get; set; }
+        public double BatteryKwh { get; set; }
+
+        public override void Drive()
+        {
+            Console.WriteLine($"The {MainColor} Zero zips by you! Yeeeeeoooowww!");
+        }
+        public override void Turn(string direction)
+        {
+            Console.WriteLine($"The vehicle silently turns {direction}.");
+        }
+        public override void Stop()
+        {
+            Console.WriteLine("The vehicle gently rolls to a complete, and noiseless stop!");
+        }
 
         public void ChargeBattery()
         {
-            // method definition omitted
-        }
-         public void Drive()
-        {
-            Console.WriteLine("The black Zero Rooom!");
-        }
-        public void Turn()
-        {
-            Console.WriteLine("The black Zero Turns slowly");
-        }
-         public void Stop()
-        {
-            Console.WriteLine("The black Zero screeches to a stop");
+            BatteryKwh = 42;
+            CurrentChargePercentage = 100;
         }
     }
 }

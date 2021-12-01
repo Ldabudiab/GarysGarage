@@ -1,29 +1,28 @@
 using System;
+using System.Collections.Generic;
 
 namespace Garage
 {
-    public class Tesla  // Electric car
+    public class Tesla : Vehicle, IElectricVehicle //Electric Car
     {
-        public double BatteryKWh { get; set; }
-        public string MainColor { get; set; }
-        public int MaximumOccupancy { get; set; }
-
+        public double CurrentChargePercentage { get; set; }
+        public double BatteryKwh { get; set; }
+        public override void Drive()
+        {
+            Console.WriteLine($"The {MainColor} Tesla blazes past you! Mmmmmmm!");
+        }
+        public override void Turn(string direction)
+        {
+            Console.WriteLine($"The vehicle quietly makes a {direction} turn.");
+        }
+        public override void Stop()
+        {
+            Console.WriteLine("The vehicle buzzes to a complete stop.");
+        }
         public void ChargeBattery()
         {
-            // method definition omitted
-        }
-
-         public void Drive()
-        {
-            Console.WriteLine("The White Tesla goes ......");
-        }
-            public void Turn()
-        {
-            Console.WriteLine("The Vehicle Turns slowly");
-        }
-         public void Stop()
-        {
-            Console.WriteLine("The Vehicle screeches to a stop");
+            BatteryKwh = 62;
+            CurrentChargePercentage = 100;
         }
     }
 }

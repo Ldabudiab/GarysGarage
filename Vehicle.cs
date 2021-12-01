@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+
 
 namespace Garage
 {
@@ -6,10 +8,19 @@ namespace Garage
     {
         public string MainColor { get; set; }
         public int MaximumOccupancy { get; set; }
+        public string Name { get; set; }
 
-        public void Drive()
+        public virtual void Drive()
         {
             Console.WriteLine("Vrooom!");
+        }
+        public virtual void Turn(string direction)
+        {
+            Console.WriteLine($"The Vehicle turned {direction}.");
+        }
+        public virtual void Stop()
+        {
+            Console.WriteLine("The Vehicle comes to a slow stop.");
         }
     }
 }

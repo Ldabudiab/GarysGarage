@@ -1,29 +1,27 @@
 using System;
+using System.Collections.Generic;
 
 namespace Garage
 {
-    public class Ram  // Gas powered truck
+    public class Ram : Vehicle //Gas powered truck
     {
         public double FuelCapacity { get; set; }
-        public string MainColor { get; set; }
-        public int MaximumOccupancy { get; set; }
 
         public void RefuelTank()
         {
-            // method definition omitted
+            //method definition omitted
         }
-
-         public void Drive()
+        public override void Drive()
         {
-            Console.WriteLine("I have a tiny blue wiener!");
+            Console.WriteLine($"The {MainColor} Ram rumbles past! Rrruummmbbble!");
         }
-             public void Turn()
+        public override void Turn(string direction)
         {
-            Console.WriteLine("The black Zero Turns slowly");
+            Console.WriteLine($"The vehicle quckly lumbers around a {direction} turn");
         }
-         public void Stop()
+        public override void Stop()
         {
-            Console.WriteLine("The black Zero screeches to a stop");
+            Console.WriteLine("The vehicle quickly comes to a full stop!");
         }
     }
 }
